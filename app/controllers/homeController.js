@@ -5,6 +5,17 @@ angular.module('pigLatinApp').controller('HomeController', function ($scope) {
 
   this.outputField = "";
 
+  this.histories = [];
+
+  var updateHistory = function(){
+    if(self.histories.length < 10){
+      self.histories.push(self.inputField);
+    }else{
+      self.histories.shift();
+      self.histories.push(self.inputField);
+    }
+  };
+
   this.makePigLatin = function(){
     var string = self.inputField.toLowerCase();
     var firstLetter = string.slice(0, 1);
@@ -25,6 +36,9 @@ angular.module('pigLatinApp').controller('HomeController', function ($scope) {
         self.outputField = remainingChar + firstLetter + "ay";
       }
     });
+
+    updateHistory();
+
   };
 
 });
