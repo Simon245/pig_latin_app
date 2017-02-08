@@ -1,0 +1,11 @@
+{
+  "name": "pig_latin_app",
+  "version": "0.0.0",
+  "dependencies": {
+    "lodash": "~4.17.4",
+    "angular": "~1.6.2",
+    "angular-route": "~1.6.2",
+    "jquery": "~3.1.1",
+    "bootstrap": "~3.3.7"
+  }
+}

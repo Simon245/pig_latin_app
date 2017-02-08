@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="pigLatinApp">
+<head>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="container">
+  <div id="main">
+
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <p class="navbar-brand" href="#">Pig Latin App</p>
+        </div>
+
+      </div>
+    </nav>
+
+    <div ng-view></div>
+
+  </div>
+
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/lodash/dist/lodash.js"></script>
+  <script src="app.js"></script>
+  <script src="controllers/homeController.js"></script>
+</body>
+
+</html>
