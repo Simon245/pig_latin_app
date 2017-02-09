@@ -5,6 +5,8 @@ angular.module('pigLatinApp').controller('HomeController', function ($scope) {
 
   this.outputField = "";
 
+  this.arrayOfStrings = [];
+
   this.histories = [];
 
   var updateHistory = function(){
@@ -16,26 +18,41 @@ angular.module('pigLatinApp').controller('HomeController', function ($scope) {
     }
   };
 
-  this.makePigLatin = function(){
-    var string = self.inputField.toLowerCase();
+  var pigify = function(string){
     var firstLetter = string.slice(0, 1);
     var remainingChar = string.substr(1);
     var vowels = ['a', 'e', 'i', 'u'];
     var isVowel = false;
-
-    if(string === ""){
-      self.outputField = "";
-      return;
-    }
-
     _.each(vowels, function(v){
       if(firstLetter === v){
-        self.outputField = remainingChar + firstLetter + "i";
+        isVowel = true;
         return false;
       }else{
-        self.outputField = remainingChar + firstLetter + "ay";
+        isVowel = false;
       }
     });
+
+      if(isVowel){
+        self.arrayOfStrings.push(remainingChar + firstLetter + "i");
+      }else{
+          self.arrayOfStrings.push(remainingChar + firstLetter + "ay");
+      }
+  };
+
+  this.makePigLatin = function(){
+    self.outputField = "";
+    self.arrayOfStrings = [];
+    if(self.inputField === ""){
+      return;
+    }
+    var string = self.inputField.toLowerCase();
+    var array = string.split(' ');
+
+    _.each(array, function(string){
+      pigify(string);
+    });
+
+    self.outputField = self.arrayOfStrings.join(" ");
 
     updateHistory();
 

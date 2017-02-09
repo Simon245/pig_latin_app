@@ -3,7 +3,7 @@
 
   <div class="row">
     <div class="col-md-6">
-      <input type="text" class="form-control" placeholder="input word here" autofocus
+      <input type="text" id="input-field" class="form-control" placeholder="input word here" autofocus
       ng-model="controller.inputField">
     </div>
     <div class="col-md-6">
@@ -14,13 +14,13 @@
   <div class="row">
     <div class="col-md-6">
       <h2>Output</h2>
-      <input type="text" class="form-control output-value" ng-model="controller.outputField" disabled="true">
+      <textarea id="output-field" class="form-control" rows="2" ng-model="controller.outputField" disabled="true"></textarea>
     </div>
   </div>
 
   <div class="row">
-    <h2>History</h2>
     <div class="col-md-12">
+      <h2>History</h2>
       <ol>
         <li ng-repeat="history in controller.histories">{{history}}</li>
       </ol>
