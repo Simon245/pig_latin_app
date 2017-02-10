@@ -1,3 +1,15 @@
 #output-field {
   cursor: default !important;
+  min-height: 40px;
+  overflow: auto;
+}
+
+.centered {
+  float: none;
+  margin: 0 auto;
+}
+
+.history {
+  height: 250px;
+  overflow: auto;
 }

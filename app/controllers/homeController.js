@@ -53,9 +53,8 @@ angular.module('pigLatinApp').controller('HomeController', function ($scope) {
     });
 
     self.outputField = self.arrayOfStrings.join(" ");
-
     updateHistory();
-
+    self.inputField = "";
   };
 
 });
